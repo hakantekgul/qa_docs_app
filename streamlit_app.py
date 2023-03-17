@@ -10,7 +10,7 @@ from langchain.vectorstores import FAISS
 db = FAISS.load_local("faiss_index", OpenAIEmbeddings())
 qa = VectorDBQA.from_chain_type(llm=OpenAI(), chain_type="stuff", vectorstore=db)
 
-"""Arize Docs Q&A Bot"""
+
 import streamlit as st
 from streamlit_chat import message
 
@@ -19,7 +19,7 @@ from langchain.llms import OpenAI
 
 # From here down is all the StreamLit UI.
 # st.set_page_config(page_title="LangChain Demo", page_icon=":robot:")
-st.header("LangChain Demo")
+st.header("Arize Q&A Bot with LangChain and LLMs")
 
 if "generated" not in st.session_state:
     st.session_state["generated"] = []
