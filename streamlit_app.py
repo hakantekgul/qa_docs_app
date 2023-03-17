@@ -32,14 +32,14 @@ if "past" not in st.session_state:
 
 
 def get_text():
-    input_text = st.text_input("You: ", "Hello, how are you?", key="input")
+    input_text = st.text_input("Ask an Arize Related Question: ", "Why should we use UMAP over t-SNE?", key="input")
     return input_text
 
 
 user_input = get_text()
 
 if user_input:
-    output = qa.query(user_input)
+    output = qa.run(user_input)
 
     st.session_state.past.append(user_input)
     st.session_state.generated.append(output)
